@@ -1,6 +1,6 @@
 {
-  "name": "A browser action with a popup that changes the page color",
-  "description": "Change the current page color",
+  "name": "KissAnime Analyzer",
+  "description": "download anime movies",
   "version": "1.0",
   "permissions": [
     "tabs", "storage", "unlimitedStorage", "downloads", "http://*/*", "https://*/*"
