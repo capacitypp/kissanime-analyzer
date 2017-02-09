@@ -6,6 +6,10 @@
 function click(e) {
   chrome.tabs.executeScript(null,
       {code:"document.body.style.backgroundColor='" + e.target.id + "'"});
+  chrome.tabs.executeScript(null,
+      {code:"console.log('test2')"});
+  chrome.tabs.executeScript(null,
+      {code:"nextPage()"});
   window.close();
 }
 

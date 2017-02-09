@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log('test');
   console.log(location.href);
   result = location.href.split("/");
   animename = result[result.length - 1];
@@ -18,9 +17,6 @@ $(document).ready(function(){
   });
   chrome.runtime.sendMessage({command: "get idx"}, function(response) {
     console.log(String(response.ret));
-  });
-  chrome.runtime.sendMessage({command: "get url"}, function(response) {
-    console.log(response.ret);
   });
 });
 

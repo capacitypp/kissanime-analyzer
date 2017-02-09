@@ -3,7 +3,7 @@
   "description": "Change the current page color",
   "version": "1.0",
   "permissions": [
-    "tabs", "storage", "unlimitedStorage", "http://*/*", "https://*/*"
+    "tabs", "storage", "unlimitedStorage", "downloads", "http://*/*", "https://*/*"
   ],
   "browser_action": {
       "default_title": "Set this page's color.",
@@ -12,8 +12,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*"],
-	  "js": ["jquery-3.1.1.min.js", "script.js"]
+      "matches": ["http://kissanime.ru/Anime/*/"],
+	  "js": ["jquery-3.1.1.min.js", "script.js", "nextpage.js"]
+	},
+    {
+      "matches": ["http://kissanime.ru/Anime/*/E*"],
+	  "js": ["jquery-3.1.1.min.js", "script2.js", "nextpage.js"]
 	}
   ],
   "background": {

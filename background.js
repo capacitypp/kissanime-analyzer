@@ -22,10 +22,17 @@ chrome.runtime.onMessage.addListener(
       sendResponse({ret: Number(localStorage["idx"])});
 	if (request.command == "get url") {
       var idx = Number(localStorage["idx"]);
-      sendResponse({ret: localStorage[String(idx)]});
-	  idx++;
-	  localStorage["idx"] = String(idx);
+	  var num = Number(localStorage["num"]);
+	  if (idx == num) {
+        sendResponse({ret: "null"});
+	  } else {
+        sendResponse({ret: localStorage[String(idx)]});
+	    idx++;
+	    localStorage["idx"] = String(idx);
+	  }
 	}
+	if (request.command == "download")
+	  chrome.downloads.download({url: request.url, filename: request.filename}, null);
   }
 );
 
